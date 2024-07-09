@@ -5,4 +5,4 @@ A simple calculator I made in Rust.
 
 All you need to do is click the run button in the top left corner and than follow the instructions in the terminal.
 
-Another way you can use this calculator is by downloading the files and running main.rs in your terminal.
+Another way you can use this calculator is by downloading the files and running the version you want in you terminal.
