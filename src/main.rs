@@ -30,6 +30,8 @@ fn main() {
         num1_string = num1_string.trim().to_string();
         let num1 = num1_string.parse::<i128>().unwrap();
 
+    println!("You selected {}", num1_string);
+
     println!("Please type the second number and hit enter.");
 
         num2_string.clear();
@@ -37,13 +39,18 @@ fn main() {
         num2_string = num2_string.trim().to_string();
         let num2: i128 = num2_string.parse().unwrap();
 
+    println!("You selected {}", num2_string);
+
     println!("Please type a math symbol (* , / , + , -) and hit enter.");
 
         sym.clear();
         io::stdin().read_line(&mut sym).unwrap(); 
         sym = sym.trim().to_string();
 
+    println!("You selected {}", sym);
+
     solve(num1,sym,num2);
+
 
 
 }
@@ -68,9 +75,34 @@ fn main() {
             println!("Sorry. This is not a viable problem. Try again.")
         };
         
-        println!("The answer is {}", answer);
+        if answer > 0 {
+            println!("The answer is {}", answer);
+        }
+        else {
 
+        }
+     rerun()
     }
+
+    fn rerun () {
+
+        let mut rerun = String::new();
+        println!("Would you like to solve another problem? (y/n)");
+        rerun.clear();
+        io::stdin().read_line(&mut rerun).unwrap();
+        rerun = rerun.trim().to_string();
+
+        if rerun == "y"{
+            println! ("ok.");
+            main ();
+        }
+        else {
+            println! ("Bye.");
+            std::process::exit(0);
+        }
+        
+    }
+
 
 
   
