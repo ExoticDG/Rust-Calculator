@@ -28,7 +28,7 @@ fn main() {
         num1_string.clear();
         io::stdin().read_line(&mut num1_string).unwrap();
         num1_string = num1_string.trim().to_string();
-        let num1 = num1_string.parse::<i128>().unwrap();
+        let num1 = num1_string.parse::<f64>().unwrap();
 
     println!("You selected {}", num1_string);
 
@@ -37,7 +37,7 @@ fn main() {
         num2_string.clear();
         io::stdin().read_line(&mut num2_string).unwrap();
         num2_string = num2_string.trim().to_string();
-        let num2: i128 = num2_string.parse().unwrap();
+        let num2: f64 = num2_string.parse().unwrap();
 
     println!("You selected {}", num2_string);
 
@@ -55,32 +55,30 @@ fn main() {
 
 }
 
-    fn solve (num1: i128,sym:String,num2:i128){
-        let mut answer:i128=0;   
+    fn solve (num1: f64,sym:String,num2:f64){
+        let answer:f64;   
         
         if sym == "*" {
-            answer = num1*num2;   
+            answer = num1*num2;
+            println!("The answer is {}", answer);   
         }
         else if sym == "/" {
             answer = num1/num2;
+            println!("The answer is {}", answer);
         }
         else if sym == "-"  {
             answer = num1-num2;
+            println!("The answer is {}", answer);
             
         }
         else if sym == "+" {
             answer = num1+num2;
+            println!("The answer is {}", answer);
         }
         else {
             println!("Sorry. This is not a viable problem. Try again.")
         };
-        
-        if answer > 0 {
-            println!("The answer is {}", answer);
-        }
-        else {
 
-        }
      rerun()
     }
 
@@ -98,7 +96,7 @@ fn main() {
         }
         else {
             println! ("Bye.");
-            std::process::exit(0);
+            std::process::exit(0)
         }
         
     }
