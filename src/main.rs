@@ -16,20 +16,32 @@ use std::io;
 
 fn main() {
     println!("Please type something, or x to escape:");
-    let mut input_string = String::new();
-loop {
-        if input_string == "stop" {
-            println!("See you later!");
+    let mut num1:i128;
+    let mut sym = String::new();
+    let mut num2:i128;
+    let mut answer:i128;
+
+        if sym == "*" {
+            let answer = num1*num2;   
+        }
+        else if sym == "/" {
+            let answer = num1/num2;
+        }
+        else if sym == "-"  {
+            let answer = num1-num2;
+            
+        }
+        else if sym == "+" {
+            let answer = num1+num2;
         }
         else {
-        input_string.clear();
+            println!("Sorry. This is not a viable problem. Try again.")
+        };
+    println!("The answer is {}", answer);
 
-        io::stdin().read_line(&mut input_string).unwrap(); 
-
-        println!("You wrote {}", input_string);
-        }
     }
-}
+
+
   
     /* 
     while input_string != "x" { // This is the part that doesn't work right
