@@ -1,8 +1,7 @@
 A simple calculator I made in Rust.
 
+[Dropbox File Download](https://www.dropbox.com/scl/fo/v65uvyfaletwsikna5m57/AE5xTG4bKB2_DL0ocXvFZkg?rlkey=4gbqwfq8ofolgu4hbzg99wz8z&st=21n8n7hd&dl=0)
 
-[Link to use my calculator.](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=3de045da59768cadb6697a88bfc97311)
+To use this calculator on Windows download the Windows executable and left click it twice.
 
-All you need to do is click the run button in the top left corner and than follow the instructions in the terminal.
-
-Another way you can use this calculator is by downloading the files and running the version you want in you terminal.
+To use the Linux version (tested on kubuntu) download the Linux executable and right click on the file. you then want to select run in Konsole (on different distributions of Linux this might say console or terminal).

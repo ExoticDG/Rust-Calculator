@@ -1,7 +1,8 @@
 [package]
 name = "Rust-Calculator"
-version = "6.5.0"
+version = "7.0.0"
 edition = "2021"
 
 [dependencies]
+atty = "0.2"
 
