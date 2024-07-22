@@ -1,6 +1,8 @@
 
-use std::{env, io};
+// use std::{env::{self,}, io,};
+slint::include_modules!();
 
+/* 
 fn os() {
     let mut ostype = String::new();
     println!(
@@ -37,131 +39,66 @@ fn os() {
         }
     }
 }
+*/
 
-fn main() {
-    os();
+fn main() -> Result<(), slint::PlatformError> {
+ //   os();
+    let ui = AppWindow::new()?;
+    ui.on_calc({
+        let ui_handle = ui.as_weak();
+        move || {
+            let ui = ui_handle.unwrap();
+            let n1 = ui.get_num1ui();
+            let n2 = ui.get_num2ui();
+            let s = ui.get_symui();
+            
+            let ans = calculate(s.to_string(), n1.to_string(), n2.to_string());
+            ui.set_result(ans.into());
+        }
+        
 
-    let mut sym = String::new();
-    let mut num1_string = String::new();
-    let mut num2_string = String::new();
+    });
+    ui.run();
 
-    println!(
-        "Please type the first number and hit enter. (if you want to use pi type 3.14 in this)"
-    );
+    Ok(())
+} 
 
-    num1_string.clear();
-    io::stdin().read_line(&mut num1_string).unwrap();
-    num1_string = num1_string.trim().to_string();
-    let num1 = num1_string.parse::<f64>().unwrap();
 
-    println!("You selected {}", num1_string);
+fn calculate(sym:String, num1:String, num2:String) -> String {
+    let mut answer:f64 = 0.0;
+    let problem:String = format!("{num1} {sym} {num2}");
 
-    println!(
-        "Please type the second number and hit enter. (if you want to use pi type 3.14 in this)"
-    );
+    println!("calc strings {num1} {num2} {sym}");
 
-    num2_string.clear();
-    io::stdin().read_line(&mut num2_string).unwrap();
-    num2_string = num2_string.trim().to_string();
-    let num2: f64 = num2_string.parse().unwrap();
-
-    println!("You selected {}", num2_string);
-
-    println!("Please type a math symbol (* , / , + , -) and hit enter.");
-
-    sym.clear();
-    io::stdin().read_line(&mut sym).unwrap();
-    sym = sym.trim().to_string();
-
-    println!("You selected {}", sym);
-
-    solve(num1, sym, num2);
-}
-
-fn solve(num1: f64, sym: String, num2: f64) {
-    let mut answer: f64;
-    let pi1: f64;
-    let pi2: f64;
-
-    if num2 == 3.14 {
-        pi2 = std::f64::consts::PI;
-
-        if sym == "*" {
-            answer = num1 * pi2;
-            println!("The answer is {}", answer);
-        } else if sym == "/" {
-            answer = num1 / pi2;
-            println!("The answer is {}", answer);
-        } else if sym == "-" {
-            answer = num1 - pi2;
-            println!("The answer is {}", answer);
-        } else if sym == "+" {
-            answer = num1 + pi2;
-            println!("The answer is {}", answer);
-        } else {
-            println!("Sorry. This is not a viable problem. Try again.")
-        };
-    }
-
-    if num1 == 3.14 {
-        pi1 = std::f64::consts::PI;
-        println!("{}", pi1);
-
-        if sym == "*" {
-            answer = pi1 * num2;
-            println!("The answer is {}", answer);
-        } else if sym == "/" {
-            answer = pi1 / num2;
-            println!("The answer is {}", answer);
-        } else if sym == "-" {
-            answer = pi1 - num2;
-            println!("The answer is {}", answer);
-        } else if sym == "+" {
-            answer = pi1 + num2;
-            println!("The answer is {}", answer);
-        } else {
-            println!("Sorry. This is not a viable problem. Try again.")
-        };
-    }
-
-    if num1 == 3.14 {
-    } else if num2 == 3.14 {
+    let n1 = if num1=="3.14" || num1.to_lowercase()=="pi" || num1=="𝜋" {
+        std::f64::consts::PI
     } else {
-        if sym == "*" {
-            answer = num1 * num2;
-            println!("The answer is {}", answer);
-        } else if sym == "/" {
-            answer = num1 / num2;
-            println!("The answer is {}", answer);
-        } else if sym == "-" {
-            answer = num1 - num2;
-            println!("The answer is {}", answer);
-        } else if sym == "+" {
-            answer = num1 + num2;
-            println!("The answer is {}", answer);
-        } else {
-            println!("Sorry. This is not a viable problem. Try again.")
-        };
-    }
+        num1.trim().parse::<f64>().unwrap()
+    };
 
-    rerun()
-}
-
-fn rerun() {
-    let mut rerun = String::new();
-    println!("Would you like to solve another problem? (y/n)");
-    rerun.clear();
-    io::stdin().read_line(&mut rerun).unwrap();
-    rerun = rerun.trim().to_string();
-
-    if rerun.to_lowercase() == "y" {
-        println!("ok.");
-        main();
-    } else if rerun.to_lowercase() == "n" {
-        println!("Bye.");
-        std::process::exit(0)
+    let n2 = if num2=="3.14" || num2.to_lowercase()=="pi" || num2=="𝜋"  {
+        std::f64::consts::PI
     } else {
-        panic!("Exit Code 317. That is not a viable input.");
-    }
-}
+        num2.trim().parse::<f64>().unwrap()
+    };
 
+
+    if sym == "*" {
+        answer = n1 * n2;
+        println!("The answer is {}", answer);
+    } else if sym == "/" {
+        answer = n1 / n2;
+        println!("The answer is {}", answer);
+    } else if sym == "-" {
+        answer = n1 - n2;
+        println!("The answer is {}", answer);
+    } else if sym == "+" {
+        answer = n1 + n2;
+        println!("The answer is {}", answer);
+    } else {
+        println!("Sorry. This is not a viable problem. Try again.")
+    };
+
+    let result = format!("Answer == {} \n Problem == {}", answer, problem);
+    result
+}
