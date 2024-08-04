@@ -14,6 +14,13 @@ To use the Linux version (tested on kubuntu) download the Linux executable and r
 
 Feel free to make suggestions in the discussions tab and report any errors or bugs the the issues tab.
 
+
+### Android and Linux Installer Install steps
+
+Download the release you want from the releases section and folow the instructions there.
+
+Feel free to make suggestions in the discussions tab and report any errors or bugs the the issues tab.
+
 ### NOTICE
 I will no longer be updating the Windows files for smaller updates like V6.5.0. I will only update windows to main releases like V9.0.0. If you have a specific version you want windows updated to please post it in the dedicated discussion.
 
