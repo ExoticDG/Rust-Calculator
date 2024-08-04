@@ -1,28 +1,13 @@
 import { GridBox, Button, LineEdit, ListView, Switch, VerticalBox} from "std-widgets.slint";
 
-
-
-
-
 export component AppWindow inherits Window {
 
-    // callback calculate_num1(string);
-    // callback calculate_num2(string);
-    // callback calculate_sym(string);
     callback calc();
 
     in property <string> result: "";
     out property <string> num1ui: "";
     out property <string> num2ui: "";
     out property <string> symui: "";
-
-
-//    function calculate(num1ui:string, num2ui:string, symui:string) {
-//     //    calculate_num1(num1ui);
-//     //    calculate_num2(num2ui);
-//     //    calculate_sym(symui);
-//     calc(num1ui, num2ui, symui);
-//    } 
 
     background: #313e50;
     GridBox {
@@ -32,18 +17,7 @@ export component AppWindow inherits Window {
             VerticalBox {
                 width: 300px;
                 height: 60px;
-                // for data in [
-                //     { text: root.result , 
-                //         color: #d7a91f, 
-                //         bg: #1c232d, 
-                //         font-weight: 600, 
-                //         font-size: 50},
-                // ] : Rectangle {
-                //     x: 0;
-                //     height: 30px;
-                //     background: data.bg;
-                //     width: parent.width;
-                // }
+                
                 Rectangle {
                     x: 0;
                     height: 30px;
@@ -102,24 +76,3 @@ export component AppWindow inherits Window {
         }
     }
 }
-
-
-
-
-
-/*
-in-out property <int> counter: 42;
-callback request-increase-value();
-VerticalBox { 
-    Text {
-        text: "Counter: \{root.counter}";
-    }
-
-    Button {
-        text: "Increase value";
-        clicked => {
-            root.request-increase-value();
-        }
-    }
-}
-*/

@@ -1,18 +1,42 @@
 [package]
-name = "Rust-Calculator"
-version = "8.0.0"
+name = "rust_calculator"
+version = "8.1.0"
 edition = "2021"
 build = "build.rs"
 description = "A simple calculator I made in rust."
 
 
-[dependencies]
-slint = "1.6"
-
 [build-dependencies]
-slint-build = "1.6"
+slint-build = "1.7.1"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+slint = { version = "1.7.1", features = ["backend-android-activity-06"] }
+
+
+
 
 [package.metadata.bundle]
 name = "Rust Calculator"
 identifier = "io.github.ExoticDG.Rust-Calculator"
 icon = ["./icon.png", "./icon.png"]
+
+
+
+[package.metadata.android]
+# Name for final APK file.
+# Defaults to package name.
+apk_name = "Rust Calculator"
+
+[package.metadata.android.application]
+
+# Virtual path your application's icon for any mipmap level.
+# If not specified, an icon will not be included in the APK.
+# icon = "@mipmap/ic_launcher"
+
+# See https://developer.android.com/guide/topics/manifest/application-element#label
+#
+# Defaults to the compiled artifact's name.
+label = "Rust Calculator"
