@@ -1,3 +1,5 @@
+![logo/icon for rust calc](/icon.png)
+
 # Rust-Calculator
 
 A simple calculator I made in Rust.
@@ -12,7 +14,10 @@ To use the Linux version (tested on kubuntu) download the Linux executable and r
 
 Feel free to make suggestions in the discussions tab and report any errors or bugs the the issues tab.
 
-## Dev
+### NOTICE
+I will no longer be updating the Windows files for smaller updates like V6.5.0. I will only update windows to main releases like V9.0.0. If you have a specific version you want windows updated to please post it in the dedicated discussion.
+
+## Dev For LINUX
 
 * Compile & run dev mode Linux
 
@@ -28,7 +33,7 @@ Feel free to make suggestions in the discussions tab and report any errors or bu
         > cargo apk run --target aarch64-linux-android --lib
         ```
 
-## Dev Setup
+## Dev Setup For LINUX
 
 ### Pre-req
 
@@ -57,7 +62,7 @@ https://github.com/rust-mobile/cargo-apk
 > cargo install cargo-apk
 ```
 
-## Setup Android SDK Environment
+## Setup Android SDK Environment For LINUX
 
 https://developer.android.com/studio
 

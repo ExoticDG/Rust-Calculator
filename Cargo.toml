@@ -1,6 +1,6 @@
 [package]
-name = "rust_calculator"
-version = "8.1.0"
+name = "Rust-Calculator"
+version = "9.0.0"
 edition = "2021"
 build = "build.rs"
 description = "A simple calculator I made in rust."
@@ -21,7 +21,7 @@ slint = { version = "1.7.1", features = ["backend-android-activity-06"] }
 [package.metadata.bundle]
 name = "Rust Calculator"
 identifier = "io.github.ExoticDG.Rust-Calculator"
-icon = ["./icon.png", "./icon.png"]
+icon = ["./icon.png", "./icon@2x.png"]
 
 
 
