@@ -11,4 +11,4 @@
 
 ## Reporting a Vulnerability
 
-To report you can either use the issues tab or ther is a disscution in the disscution tab for reporting.
+To report you can either use the issues tab or ther is a disscution in the disscution tab for reporting. You can also use the report button in the security tab.
