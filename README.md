@@ -2,11 +2,9 @@
 
 # Rust-Calculator
 
-A simple calculator I made in Rust.
+A calculator I made as my first Rust project.
 
 ## Usage
-
-[Dropbox File Download](https://www.dropbox.com/scl/fo/v65uvyfaletwsikna5m57/AE5xTG4bKB2_DL0ocXvFZkg?rlkey=4gbqwfq8ofolgu4hbzg99wz8z&st=21n8n7hd&dl=0)
 
 To use this calculator on Windows (tested on windows 11) download the Windows executable and left click it twice (installer not available).
 
@@ -17,12 +15,9 @@ Feel free to make suggestions in the discussions tab and report any errors or bu
 
 ### Android and Linux Installer Install steps
 
-Download the release you want from the releases section and folow the instructions there.
+Download the release you want from the releases section and follow the instructions there.
 
 Feel free to make suggestions in the discussions tab and report any errors or bugs the the issues tab.
-
-### NOTICE
-I will no longer be updating the Windows files for smaller updates like V6.5.0. I will only update windows to main releases like V9.0.0. If you have a specific version you want windows updated to please post it in the dedicated discussion.
 
 ## Dev For LINUX
 
@@ -98,3 +93,37 @@ https://developer.android.com/studio
     > sudo apt-get install adb
     > sudo agp-get install google-android-platform-tools-installer
     ```
+
+
+<!-- ## Dev for Microsoft Windows 11
+
+* Compile & run dev mode
+
+    ```bash
+    > cargo run
+    ```
+
+## Dev Setup for Microsoft Windows 11
+
+### Install Rust
+
+```bash
+> curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+```
+
+### Install Cargo-Apk
+
+https://github.com/rust-mobile/cargo-apk
+
+```bash
+> cargo install cargo-apk
+```
+
+### Install and Setup Cargo-WiX
+
+https://github.com/volks73/cargo-wix
+
+```bash
+> cargo install cargo-wix
+> cargo wix init
+``` -->

@@ -14,12 +14,31 @@ export component AppWindow inherits Window {
         padding:40px;
         spacing:20px;
         Row {
-            VerticalBox {
+            HorizontalLayout {
                 width: 300px;
                 height: 60px;
                 
                 Rectangle {
-                    x: 0;
+                    height: 30px;
+                    background: #1c232d;
+                    width: parent.width;
+                    Text {
+                        text: root.result;
+                        color: #d7a91f;
+                        font-weight: 600; 
+                    }
+                }
+                Rectangle {
+                    height: 30px;
+                    background: #1c232d;
+                    width: parent.width;
+                    Text {
+                        text: root.result;
+                        color: #d7a91f;
+                        font-weight: 600; 
+                    }
+                }
+                Rectangle {
                     height: 30px;
                     background: #1c232d;
                     width: parent.width;
@@ -30,23 +49,81 @@ export component AppWindow inherits Window {
                     }
                 }
                 
+                
+            }
+        }
+        Row {
+            Switch {text : "Second ";}
+        }
+        Row { 
+            HorizontalLayout {
+                alignment: space-between;
+
+                Button { text: "7"; primary: true; width: 40px; height: 40px; clicked => {num1ui.text = "7"; root.num1ui="7"}} 
+                Button { text: "8"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "8"; root.num2ui="8"}}
+                Button { text: "9"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "9"; root.num2ui="9"}}
+                Button { text: "X"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "*"; root.num2ui="*"}}
             }
         }
         Row { 
             HorizontalLayout {
                 alignment: space-between;
 
-                Button { text: "𝜋 1"; primary: true; width: 140px; height: 40px; clicked => {num1ui.text = "𝜋"; root.num1ui="𝜋"}} 
-                Button { text: "𝜋 2"; primary: true; width: 140px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+                Button { text: "4"; primary: true; width: 40px; height: 40px; clicked => {num1ui.text = "4"; root.num1ui="4"}} 
+                Button { text: "5"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "5"; root.num2ui="5"}}
+                Button { text: "6"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "6"; root.num2ui="6"}}
+                Button { text: "-"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "-"; root.num2ui="-"}}
             }
         }
+        Row { 
+            HorizontalLayout {
+                alignment: space-between;
+
+                Button { text: "1"; primary: true; width: 40px; height: 40px; clicked => {num1ui.text = "1"; root.num1ui="1"}} 
+                Button { text: "2"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "2"; root.num2ui="2"}}
+                Button { text: "3"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "3"; root.num2ui="3"}}
+                Button { text: "+"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "+"; root.num2ui="+"}}
+            }
+        }
+        Row { 
+            HorizontalLayout {
+                alignment: space-between;
+
+                Button { text: "0"; primary: true; width: 40px; height: 40px; clicked => {num1ui.text = "0"; root.num1ui="0"}} 
+                Button { text: "."; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "."; root.num2ui="."}}
+                Button { text: "DEL"; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = ""; root.num2ui=""}}
+                Button { text: "="; primary: true; width: 40px; height: 40px; clicked => {root.calc()}}
+            }
+        // }
+        // Row { 
+        //     HorizontalLayout {
+        //         alignment: space-between;
+
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num1ui.text = "𝜋"; root.num1ui="𝜋"}} 
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+        //     }
+        // }
+        // Row { 
+        //     HorizontalLayout {
+        //         alignment: space-between;
+
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num1ui.text = "𝜋"; root.num1ui="𝜋"}} 
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+        //         Button { text: ""; primary: true; width: 40px; height: 40px; clicked => {num2ui.text = "𝜋"; root.num2ui="𝜋"}}
+        //     }
+        }
+        
+
         Row {
             num1ui := LineEdit {
                 horizontal-alignment: center;
                 font-size: 14px;
                 width: 300px;
                 height: 30px;
-                placeholder-text: "Enter the first neumeral";
+                placeholder-text: "Enter the first numerical";
                 edited => {root.num1ui = self.text}
             }
         }
@@ -66,7 +143,7 @@ export component AppWindow inherits Window {
                 font-size: 14px;
                 width: 300px;
                 height: 30px;
-                placeholder-text: "Enter the second neumeral";
+                placeholder-text: "Enter the second numerical";
                 edited => {root.num2ui = self.text}
             }
         }
@@ -74,5 +151,6 @@ export component AppWindow inherits Window {
             Button { text: "Calculate"; clicked => {root.calc()} width: 300px;
             height: 30px;}
         }
+
     }
 }

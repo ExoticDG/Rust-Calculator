@@ -7,10 +7,15 @@
         "consts",
         "Konsole",
         "kubuntu",
+        "Kubuntu",
         "ostype",
         "slint",
         "appwindow",
-        "symui"
+        "symui",
+        "LiniageOS",
+        "GrapheneOS",
+        "cdylib"
+    
     ],
     "ignoreWords": [],
     "import": []

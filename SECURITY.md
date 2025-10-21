@@ -6,9 +6,8 @@
 | ------- | ------------------ |
 | Android | :white_check_mark: |
 | Linux   | :white_check_mark: |
-| Windows | :white_check_mark: :x: (Will only be updated with big updates unless a mager flaw is found due to development being done in linux) |
-
+| Windows | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-To report you can either use the issues tab or ther is a disscution in the disscution tab for reporting. You can also use the report button in the security tab.
+To report you can either use the issues tab or there is a discussion in the discussions tab for reporting. You can also use the report button in the security tab.

@@ -1,10 +1,10 @@
 [package]
 name = "Rust-Calculator"
-version = "9.0.0"
+version = "2.12.7"
 edition = "2021"
 build = "build.rs"
-description = "A simple calculator I made in rust."
-
+description = "A calculator I made as my first Rust project."
+authors = ["ExoticDG"]
 
 [build-dependencies]
 slint-build = "1.7.1"

@@ -12,14 +12,14 @@ pub fn calculate(sym:String, num1:String, num2:String) -> Result<String, String>
     } else {
         num1.trim().parse::<f64>()
     }
-    .map_err(|_e| "Err 3.14: First entry must be a number.".to_owned())?;
+    .map_err(|_e| "Sorry. This is not a viable problem. Try again. Digit 1".to_owned())?;
 
     let n2 = if num2=="3.14" || num2.to_lowercase()=="pi" || num2=="𝜋"  {
         Ok(std::f64::consts::PI)
     } else {
         num2.trim().parse::<f64>()
     }
-    .map_err(|_e| "Err 3.14: Second entry must be a number.".to_owned())?;
+    .map_err(|_e| "Sorry. This is not a viable problem. Try again. Digit 2".to_owned())?;
 
     let answer = if sym == "*" {
         n1 * n2
@@ -30,8 +30,7 @@ pub fn calculate(sym:String, num1:String, num2:String) -> Result<String, String>
     } else if sym == "+" {
         n1 + n2
     } else {
-        println!("Sorry. This is not a viable problem. Try again.");
-        return Err("Err 83254: Not a viable symbol.".to_owned())
+        return Err("Sorry. This is not a viable problem. Try again. Symbol".to_owned())
     };
 
     println!("The answer is {}", answer);
